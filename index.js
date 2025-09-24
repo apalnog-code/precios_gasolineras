@@ -125,17 +125,28 @@ function main(){
 
             if(e.target.status == 200){
 
-                let gasoineras = JSON.parse(solicitud.response);
+                let gasolineras = JSON.parse(solicitud.response);
                 tbbody.innerHTML = "";
+                
+                if(gasolineras.ListaEESSPrecio.length == 0){
 
-                        gasoineras.ListaEESSPrecio.forEach(element => {
+                    let tr = document.createElement("tr");
+                    let td = document.createElement("td");
+                    td.textContent = "NO HAY GASOLINERAS EN ESTE MUNICIPIO";
+                    td.colSpan = 8;
+                    tr.append(td);
+                    tbbody.append(tr);
+
+                } else {
+
+                    gasolineras.ListaEESSPrecio.forEach(element => {
                         
                         let tr = document.createElement("tr");
                         let rotulo = rellenarFilas(element.Rótulo);
                         let direccion = rellenarFilas(element.Dirección);
                         let horario = rellenarFilas(element.Horario);
-                        let gas95 = rellenarFilas(element["Precio Gasolina 95 E10"] || "- - -");
-                        let gas98 = rellenarFilas(element["Precio Gasolina 98 E10"] || "- - -");
+                        let gas95 = rellenarFilas(element["Precio Gasolina 95 E5"] || "- - -");
+                        let gas98 = rellenarFilas(element["Precio Gasolina 98 E5"] || "- - -");
                         let gasA = rellenarFilas(element["Precio Gasoleo A"] || "- - -");
                         let basB = rellenarFilas(element["Precio Gasoleo B"] || "- - -");
                         let gasPremium = rellenarFilas(element["Precio Gasoleo Premium"] || "- - -");
@@ -143,6 +154,10 @@ function main(){
                         tbbody.append(tr);
 
                     });
+
+                }
+
+                        
 
 
             }

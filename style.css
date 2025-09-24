@@ -1,71 +1,179 @@
-body {
-  font-family: "Arial", sans-serif;
-  background-color: #f4f4f9;
-  color: #333;
+/* ---------- Reset básico ---------- */
+* {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
+
+body {
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  background: linear-gradient(135deg, #e9f0f9 0%, #f4f4f9 100%);
+  color: #333;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* ---------- Contenedor principal ---------- */
 .container {
   max-width: 1200px;
-  margin: 50px auto;
-  padding: 20px;
+  margin: 60px auto;
+  padding: 30px;
   background-color: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.3s ease;
 }
+.container:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
 h1 {
   text-align: center;
-  color: #007bff;
+  color: #0066cc;
+  font-size: 2.2rem;
+  margin-bottom: 30px;
+  letter-spacing: 0.5px;
 }
+
+/* ---------- Formulario ---------- */
 .form-group {
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 .form-group label {
   display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #444;
 }
-.form-group input {
+.form-group input,
+.form-group select {
   width: 100%;
-  padding: 10px;
+  padding: 10px 12px;
   border: 1px solid #ccc;
-  border-radius: 5px;
-  box-sizing: border-box;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #ffffff, #f7f7f7);
+  color: #333;
+  font-size: 16px;
+  appearance: none;       /* Quita flecha nativa para personalizar */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  cursor: pointer;
+  position: relative;
 }
+
+.form-group select {
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23007bff' viewBox='0 0 16 16'%3E%3Cpath d='M1.5 5.5l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px;
+}
+
+.form-group select:hover {
+  border-color: #007bff;
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.15);
+}
+
+.form-group select:focus {
+  border-color: #007bff;
+  background: linear-gradient(135deg, #ffffff, #eef6ff);
+  box-shadow: 0 0 0 3px rgba(0,123,255,0.2);
+}
+
+.form-group option {
+  background-color: #f8f9fa;
+  color: #333;
+  padding: 10px;
+}
+
+.form-group option:hover {
+  background-color: #e2e6ea;
+}
+
 .form-group button {
   width: 100%;
-  padding: 10px;
-  background-color: #007bff;
+  padding: 12px;
+  background-color: #0066cc;
   color: #fff;
   border: none;
-  border-radius: 5px;
+  border-radius: 6px;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
 }
 .form-group button:hover {
-  background-color: #0056b3;
+  background-color: #004c99;
 }
+
+/* ---------- Tabla de resultados ---------- */
 .table-container {
-  margin-top: 30px;
+  margin-top: 40px;
+  overflow-x: auto; /* por si hay muchas columnas */
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
+
 table {
   width: 100%;
   border-collapse: collapse;
+  font-size: 0.95rem;
 }
-table,
+
 th,
 td {
-  border: 1px solid #ccc;
-}
-th,
-td {
-  padding: 15px;
+  padding: 14px 10px;
   text-align: center;
 }
+
+  tr{
+    border: 1px solid rgb(150, 150, 150);
+  }
+
 th {
-  background-color: #007bff;
+  background-color: #0066cc;
   color: #fff;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
 }
-td {
-  background-color: #f9f9f9;
+
+tbody tr:nth-child(even) td {
+  background-color: #f3f6fa;
+}
+
+tbody tr:hover td {
+  background-color: #e6f0fb;
+  transition: background-color 0.2s ease;
+}
+
+/* ---------- Responsividad ---------- */
+@media (max-width: 768px) {
+  .table-container{
+    box-shadow: 5px 5px 5px 10px grey;
+  }
+  .container {
+    margin: 30px 15px;
+    padding: 20px;
+  }
+
+  tr{
+    border: 1px solid rgb(150, 150, 150);
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  th,
+  td {
+    padding: 12px 8px;
+    font-size: 0.9rem;
+  }
+
+  .table-container h2{
+  text-align: center;
+  padding: 10px;
+}
 }
