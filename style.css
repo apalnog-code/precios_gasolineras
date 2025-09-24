@@ -110,15 +110,19 @@ h1 {
 /* ---------- Tabla de resultados ---------- */
 .table-container {
   margin-top: 40px;
-  overflow-x: auto; /* por si hay muchas columnas */
+  overflow-x: auto; /* scroll horizontal */
+  max-height: 500px; /* altura máxima para activar scroll vertical */
+  overflow-y: auto;  /* scroll vertical */
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
+
 
 table {
   width: 100%;
   border-collapse: collapse;
   font-size: 0.95rem;
+  min-width: 700px; /* Para permitir scroll horizontal */
 }
 
 th,
@@ -127,9 +131,13 @@ td {
   text-align: center;
 }
 
-  tr{
-    border: 1px solid rgb(150, 150, 150);
-  }
+thead th {
+  position: sticky;
+  top: 0;
+  background-color: #007bff; /* color de cabecera */
+  color: #fff;
+  z-index: 10; /* para estar encima de las filas */
+}
 
 th {
   background-color: #0066cc;
@@ -148,18 +156,15 @@ tbody tr:hover td {
   transition: background-color 0.2s ease;
 }
 
+tr {
+  border: 1px solid rgb(150, 150, 150);
+}
+
 /* ---------- Responsividad ---------- */
 @media (max-width: 768px) {
-  .table-container{
-    box-shadow: 5px 5px 5px 10px grey;
-  }
   .container {
     margin: 30px 15px;
     padding: 20px;
-  }
-
-  tr{
-    border: 1px solid rgb(150, 150, 150);
   }
 
   h1 {
@@ -172,8 +177,17 @@ tbody tr:hover td {
     font-size: 0.9rem;
   }
 
+  /* La cabecera sigue sticky aunque haya scroll horizontal */
+  .table-container {
+    overflow-x: auto;
+  }
+
+  table {
+    min-width: 600px;
+  }
+
   .table-container h2{
-  text-align: center;
-  padding: 10px;
-}
+    text-align: center;
+    padding: 10px;
+  }
 }
