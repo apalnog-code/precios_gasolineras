@@ -1,0 +1,97 @@
+/* ESTILOS LOGIN */
+
+body{
+    background-color: rgb(253, 253, 253);
+  font-family: "Open Sans", sans-serif;
+}
+
+header {
+   box-shadow: 10px 1px 10px rgb(216, 216, 216); 
+}
+
+header img{
+    padding-left: 10%;
+    width: 10%;
+}
+
+main div {
+    margin: auto;
+    margin-top: 50px;
+    width: 50%;
+    border-radius: 10px;
+    border: 1px solid rgb(199, 199, 199);
+}
+
+main div span{
+    width: 100%;
+    display: inline-block;
+    color: rgb(92, 92, 92);
+    padding: 10px;
+}
+
+main div form{
+    border-top: 1px solid rgb(187, 187, 187);
+}
+
+main div form label{
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(92, 92, 92);
+    padding: 10px;
+}
+
+main div form{
+    padding: 10px;
+}
+
+main div form input{
+    background-color: rgb(245, 245, 245);
+    border-radius: 5px;
+    border: 1px solid rgb(212, 212, 212);
+    padding: 10px;
+}
+
+main div form p{
+    padding-left: 20%;
+}
+
+main div form button {
+    background-color: rgb(45, 100, 252);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    border: 0;
+    margin-left: 20%;
+}
+
+@media (max-width: 600px) {
+    main div form{
+        width: 80%;
+    }
+
+    main div form input{
+        width: 80%;
+    }
+}
+
+
+/* ESTILO MENSAJE ERROR CREDENCIALES */
+.error {
+    background-color: rgb(250, 221, 221);
+    color: red;
+    padding: 50px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
+}
+
+
+.loginExitoso {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 20px;
+    color: green;
+    background-color: rgb(191, 255, 191);
+}
+
+

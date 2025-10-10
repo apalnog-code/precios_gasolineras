@@ -1,0 +1,48 @@
+#configuracionOrganizacion{
+    margin: 40px;
+    border: 1px solid rgb(199, 199, 199);
+    padding: 30px;
+}
+
+#configuracionOrganizacion main{
+    padding: 50px;
+    border: 1px solid rgb(199, 199, 199);
+}
+
+#configuracionOrganizacion main span{
+    display: flex;
+}
+
+#configuracionOrganizacion main span:first-child div{
+    width: 50%;
+}
+
+#configuracionOrganizacion main span:nth-child(2) div{
+    width: 100%;
+}
+
+#configuracionOrganizacion main span:nth-child(3) div{
+    width: 33.33%;
+}
+
+#configuracionOrganizacion main span div{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+#configuracionOrganizacion main span div input{
+    border-radius: 5px;
+    border: 1px solid rgb(180, 180, 180);
+    padding: 10px;
+    color: rgb(121, 121, 121);
+}
+
+#configuracionOrganizacion main form{
+    margin: 10px;
+}
+
+#configuracionOrganizacion main form button{
+    color: rgb(255, 255, 255);
+    padding: 5px;
+}
