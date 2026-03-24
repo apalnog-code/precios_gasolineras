@@ -5,8 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Precios de Gasolinera</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="manifest" href="manifest.json">
     <script src="index.js"></script>
   </head>
+
+  <script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('service-worker.js')
+      .then(() => console.log('Service Worker registrado'));
+  }
+  </script>
+
   <body>
     <div class="container">
       <h1>Precios de Gasolinera</h1>
