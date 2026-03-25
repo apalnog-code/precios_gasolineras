@@ -150,7 +150,7 @@ function main(){
                         let gasA = rellenarFilas(element["Precio Gasoleo A"] || "- - -");
                         let basB = rellenarFilas(element["Precio Gasoleo B"] || "- - -");
                         let gasPremium = rellenarFilas(element["Precio Gasoleo Premium"] || "- - -");
-                        tr.append(rotulo, direccion, horario, gas95, gas98, gasA, basB, gasPremium);
+                        tr.append(rotulo, direccion, horario, gas95, gas98, gasA, gasPremium, basB);
                         tbbody.append(tr);
 
                     });
