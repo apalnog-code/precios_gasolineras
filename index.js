@@ -140,6 +140,7 @@ function main(){
                 } else {
 
                     gasolineras.ListaEESSPrecio.forEach(element => {
+                        console.log(element);
                         
                         let tr = document.createElement("tr");
                         let rotulo = rellenarFilas(element.Rótulo);
@@ -150,7 +151,19 @@ function main(){
                         let gasA = rellenarFilas(element["Precio Gasoleo A"] || "- - -");
                         let basB = rellenarFilas(element["Precio Gasoleo B"] || "- - -");
                         let gasPremium = rellenarFilas(element["Precio Gasoleo Premium"] || "- - -");
-                        tr.append(rotulo, direccion, horario, gas95, gas98, gasA, gasPremium, basB);
+
+                        let botonMapa = document.createElement("button");
+                        botonMapa.textContent = "Mapa";
+                        botonMapa.classList.add("botonmapa");
+                        botonMapa.addEventListener("click",()=>{
+                            let latitud = element.Latitud.replace(",",".");
+                            let longitud = element["Longitud (WGS84)"].replace(",",".");;
+                            let url = `https://www.google.com/maps?q=${latitud},${longitud}`;
+                            window.open(url);
+                        });
+
+                        tr.append(rotulo, direccion, horario, gas95, gas98, gasA, gasPremium, basB, botonMapa);
+
                         tbbody.append(tr);
 
                     });

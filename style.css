@@ -196,3 +196,13 @@ tr {
   td:nth-child(7)::before { content: "GasóleoA+"; }
   td:nth-child(8)::before { content: "GasóleoB"; }
 }
+
+.botonmapa{
+  background-color: yellow;
+  border: 1px solid rgb(192, 195, 0);
+  box-shadow: 1px 1px 10px rgb(179, 179, 179);
+  border-radius: 10px;
+  margin: 10px;
+  padding: 10px;
+  align-self: center;
+}
